@@ -82,7 +82,7 @@ const imageMapping = {
 populateDropdown();
 
 async function fetchWeatherData(latitude, longitude) {
-  const url = `http://www.7timer.info/bin/api.pl?lon=${longitude}&lat=${latitude}&product=civil&output=json`;
+  const url = `/.netlify/functions/fetchWeather?lon=${longitude}&lat=${latitude}`;
   const response = await fetch(url);
   const data = await response.json();
   return data;
