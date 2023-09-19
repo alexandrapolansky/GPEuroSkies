@@ -82,8 +82,11 @@ const imageMapping = {
 populateDropdown();
 
 async function fetchWeatherData(latitude, longitude) {
-  const url = `/.netlify/functions/fetchWeather?lon=${longitude}&lat=${latitude}`;
-  const response = await fetch(url);
+  //proxy URL to make the API request over HTTPS
+  const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+  const apiUrl = `http://www.7timer.info/bin/api.pl?lon=${longitude}&lat=${latitude}&product=civil&output=json`;
+  
+  const response = await fetch(proxyUrl + apiUrl);
   const data = await response.json();
   return data;
 }
