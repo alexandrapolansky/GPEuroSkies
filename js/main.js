@@ -82,11 +82,12 @@ const imageMapping = {
 populateDropdown();
 
 async function fetchWeatherData(latitude, longitude) {
-  const url = `/.netlify/functions/weather?lon=${longitude}&lat=${latitude}`;
+  const url = `/.netlify/functions/weather-proxy?lon=${longitude}&lat=${latitude}`;
   const response = await fetch(url);
   const data = await response.json();
   return data;
 }
+
 
 function createWeatherCard(date, forecast, temp, imgSrc) {
   const card = document.createElement('div');
