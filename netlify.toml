@@ -1,2 +1,4 @@
 [build]
   functions = "netlify/functions"
+  command = "npm run build" # or whatever your build command is
+  publish = "public" # or wherever your static files are output to
