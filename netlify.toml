@@ -1,4 +1,6 @@
 [build]
-  functions = "netlify/functions"
-  command = "npm run build" # or whatever your build command is
-  publish = "public" # or wherever your static files are output to
+  publish = "path_to_your_publish_directory" # This is usually the directory where your index.html resides, e.g., "./" or "public/"
+
+# If you have functions, they should be defined like this:
+[functions]
+  directory = "netlify/functions"
