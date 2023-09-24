@@ -14,6 +14,9 @@ exports.handler = async function(event, context) {
 
   try {
     const response = await fetch(apiUrl);
+    if (!response.ok) {
+      throw new Error(`API Response: ${response.statusText}`);
+    }
     const data = await response.json();
 
     return {
@@ -23,7 +26,7 @@ exports.handler = async function(event, context) {
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ error: 'Failed fetching data from 7Timer!' })
+      body: JSON.stringify({ error: `Function Error: ${error.message}` })
     };
   }
 };
