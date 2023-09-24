@@ -81,7 +81,7 @@ h1 {
   #topRightImage {
     width: 10%;
     height: auto;
-    background: url('your-image-url') no-repeat;
+    background: url('cornermap.jpg') no-repeat;
     background-size: cover;
     position: absolute;
     top: 0;
