@@ -1,6 +1,5 @@
 [build]
-  publish = "path_to_your_publish_directory" # This is usually the directory where your index.html resides, e.g., "./" or "public/"
+  publish = "./"
 
-# If you have functions, they should be defined like this:
 [functions]
   directory = "netlify/functions"
